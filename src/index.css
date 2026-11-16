@@ -1,0 +1,6 @@
+header {
+    gap: 1rem;
+    display: flex;
+    background-color: rgb(58, 56, 56);
+    padding: 1rem;
+}

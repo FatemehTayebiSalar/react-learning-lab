@@ -1,7 +1,12 @@
-function App() {
+import { useState } from "react"
+import Header from "./components/Header"
+import type { Theme } from "./types"
 
+function App() {
+  const [theme, setTheme] = useState <Theme> ("light")
+  console.log(theme)
   return (
-    <p>React Learning Lab</p>
+    <Header theme={theme} onThemeClick={setTheme}/>
   )
 }
 
