@@ -1,6 +1,24 @@
-header {
-    gap: 1rem;
-    display: flex;
-    background-color: rgb(58, 56, 56);
-    padding: 1rem;
+:root {
+    --color-bg: #F7F5EE;
+    --color-surface: #FFFDF8;
+    --color-text: #22301F;
+    --color-text-muted: #6B7363;
+    --color-accent: #2F5D3A;
+    --color-border: #E3DFD2;
+}
+
+[data-theme="dark"] {
+    --color-bg: #141A14;
+    --color-surface: #1C241C;
+    --color-text: #ECEBE3;
+    --color-text-muted: #A7AE9E;
+    --color-accent: #8DBF8F;
+    --color-border: #2C362C;
+}
+
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
 }

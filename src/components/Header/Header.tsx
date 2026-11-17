@@ -1,5 +1,6 @@
 import { SunMedium, Moon, MonitorCog } from 'lucide-react'
-import type { Theme } from '../types'
+import type { Theme } from '../../types'
+import './Header.css'
 
 type HeaderProps = {
     theme: Theme,

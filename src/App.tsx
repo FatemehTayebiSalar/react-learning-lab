@@ -1,10 +1,12 @@
-import { useState } from "react"
-import Header from "./components/Header"
+import { useEffect, useState } from "react"
+import Header from "./components/Header/Header"
 import type { Theme } from "./types"
 
 function App() {
   const [theme, setTheme] = useState <Theme> ("light")
-  console.log(theme)
+
+  useEffect((() => document.documentElement.setAttribute('data-theme', theme)), [theme])
+  
   return (
     <Header theme={theme} onThemeClick={setTheme}/>
   )
