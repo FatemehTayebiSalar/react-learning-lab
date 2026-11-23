@@ -5,6 +5,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>react-learning-lab</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("theme")
+      if (savedTheme === "dark" || savedTheme === "light") {
+        document.documentElement.setAttribute('data-theme', savedTheme)
+      } else if (savedTheme === "system") {
+        const mediaQuery = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+        );
+        document.documentElement.setAttribute('data-theme', mediaQuery.matches? "dark" : "light")
+      }
+      } catch {
+        // It's empty on purpose: if localStorage isn't accessible the default light theme is used
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
