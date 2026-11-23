@@ -17,7 +17,8 @@ function App() {
     document.documentElement.setAttribute('data-theme', mediaQuery.matches? "dark" : "light")  
     
     applySystemTheme()
-
+    mediaQuery.addEventListener( "change" , applySystemTheme )
+    return () => mediaQuery.removeEventListener( "change" , applySystemTheme )
   }, [theme])
   
   return (
