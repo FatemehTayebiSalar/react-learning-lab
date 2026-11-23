@@ -6,16 +6,18 @@ function App() {
   const [theme, setTheme] = useState <Theme> ("light")
 
   useEffect(() => {
-    let resolvedTheme = theme
-    if (theme === "system") {
-      const mediaQuery = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-      );
-      resolvedTheme = mediaQuery.matches
-        ? "dark"
-        : "light";
+    if (theme !== "system") {
+      document.documentElement.setAttribute('data-theme', theme)
+      return
     }
-    document.documentElement.setAttribute('data-theme', resolvedTheme)
+    const mediaQuery = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+    );
+    const applySystemTheme = () =>
+    document.documentElement.setAttribute('data-theme', mediaQuery.matches? "dark" : "light")  
+    
+    applySystemTheme()
+
   }, [theme])
   
   return (
